@@ -1,79 +1,26 @@
-# Grammar-scoring-engine-model
- Objective
-The goal of this project is to develop a Grammar Scoring Engine that evaluates spoken English audio samples and assigns a grammar score ranging from 0 to 5 based on the MOS Likert scale. The model is trained to predict these continuous scores by learning from labeled audio data.
+# Grammar Scoring Engine – SHL Kaggle Competition
 
-📁 Dataset Description
-The dataset includes audio files in .wav format and three CSV files:
+## 🎯 Objective
+Built a machine learning model to predict grammar scores (0–5) from spoken English audio samples using MFCC features and regression modeling.
 
-train.csv: Contains filenames and corresponding grammar scores.
+## 🛠 Tools & Libraries
+- Python
+- Librosa
+- Pandas, NumPy
+- Scikit-learn
+- Matplotlib, Seaborn
 
-test.csv: Contains filenames without labels (used for predictions).
+## 📌 Summary of Steps
+- Extracted MFCC features from `.wav` audio files
+- Trained a Random Forest Regressor on labeled grammar scores
+- Evaluated model using RMSE and Pearson correlation
+- Predicted scores for test set and created `submission.csv`
+- Visualized predicted vs actual scores using scatter plots
 
-sample_submission.csv: Template for valid submission format.
+## ✅ Conclusion
+Successfully developed a grammar scoring engine with strong training accuracy. The model processes audio input and predicts grammar proficiency effectively.
 
-Training samples: 444
-
-Testing samples: 195
-
-Audio length: 45–60 seconds each
-
-📊 Grammar Score Rubric
-Score	Description
-1	Poor grammar, frequent errors, limited sentence structure
-2	Simple sentences, consistent grammatical mistakes
-3	Decent grammar, some syntax or structure errors
-4	Good control, few minor grammar issues
-5	Strong grammar, rarely makes errors, uses complex structures
-
-🧠 Approach
-Audio Preprocessing
-
-Extracted MFCC (Mel-frequency cepstral coefficients) features from each audio file using Librosa.
-
-Applied mean pooling to convert variable-length audio into fixed-size feature vectors.
-
-Model Training
-
-Used a Random Forest Regressor to predict grammar scores.
-
-Trained on MFCC features with corresponding labels from train.csv.
-
-Evaluation Metrics
-
-Calculated Root Mean Squared Error (RMSE) on training data.
-
-Computed Pearson Correlation to assess model consistency.
-
-Prediction & Submission
-
-Extracted features from test-audio/ and predicted scores.
-
-Created a valid submission.csv file for evaluation.
-
-Visualization
-
-Used scatter plot to compare predicted vs true grammar scores on training data.
-
-✅ Results
-Train RMSE: (value printed in notebook)
-
-Pearson Correlation: (value printed in notebook)
-
-A submission.csv file is generated in the correct format.
-
-📦 Requirements
-Python
-
-pandas
-
-numpy
-
-librosa
-
-scikit-learn
-
-matplotlib
-
-seaborn
-
-tqdm
+## 📂 Project Files
+- `train.csv`, `test.csv` – Audio file references and labels
+- `Grammar_Scoring_Engine.ipynb` – Feature extraction and model training code
+- `submission.csv` – Final predictions file for Kaggle
